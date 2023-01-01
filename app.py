@@ -55,7 +55,7 @@ def index():
 def centerLogo():
     return send_from_directory("static", "CenterLogo.png")
     
-## Get request from the client to get the RaspberryPi.png
+## Get request from the client to get the leftLogo.png
 @app.route('/leftLogo.png', methods=['GET'])
 def rPILogo():
     return send_from_directory("static", "leftLogo.png")   
