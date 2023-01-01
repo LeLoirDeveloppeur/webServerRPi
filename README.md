@@ -1,5 +1,6 @@
 # webServerRPi
 ;=Comment
+
 ;Updating inputs on RPi webserver using Python, Flask and jQuery
 
 ;This is an example of how to set up a RPi webserver and update the input values of certain inputs automatically. 
