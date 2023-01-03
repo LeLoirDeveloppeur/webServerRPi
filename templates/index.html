@@ -5,16 +5,22 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 
 <script type="text/javascript">
+function updateCellValues(GPIO){
+	console.log(GPIO);
+	for (let key in GPIO){
+			if (parseInt(GPIO[key])===1) {
+				document.getElementById(key).innerText=GPIO[key];
+				document.getElementById(key).style.backgroundColor = "lightgreen";
+			}
+			else{
+				document.getElementById(key).innerText=GPIO[key];
+				document.getElementById(key).style.backgroundColor = "darkgray";
+			}
+		}
+}
 function updater() {
   $.get('/getGPIO', function(getGPIO) {
-	$('#GPIO4').html(getGPIO['GPIO4'])
-	$('#GPIO17').html(getGPIO['GPIO17'])
-	$('#GPIO27').html(getGPIO['GPIO27'])
-	$('#GPIO22').html(getGPIO['GPIO22'])
-	$('#GPIO5').html(getGPIO['GPIO5'])
-	$('#GPIO6').html(getGPIO['GPIO6'])
-	$('#GPIO13').html(getGPIO['GPIO13'])
-	$('#GPIO19').html(getGPIO['GPIO19'])
+	updateCellValues(getGPIO);
   });
 };
 
